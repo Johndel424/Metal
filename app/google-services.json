@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "890447030961",
+    "firebase_url": "https://metal-b00e9-default-rtdb.firebaseio.com",
+    "project_id": "metal-b00e9",
+    "storage_bucket": "metal-b00e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890447030961:android:f0938700f0902baa611090",
+        "android_client_info": {
+          "package_name": "com.example.metal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8IlTP5NksZdPa6VbzKLF7WPp8nwaODtI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

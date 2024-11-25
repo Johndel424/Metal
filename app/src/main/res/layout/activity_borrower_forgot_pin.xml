@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Borrower.Borrower_ForgotPin">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/border2"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/backUp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:padding="10dp"
+                android:background="@drawable/button_background"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:fontFamily="@font/robot"
+                android:layout_above="@id/enterMobile"
+                android:layout_marginBottom="20dp"
+                android:text="FORGOT PIN" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/readexpro"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:layout_gravity="center"
+                android:textSize="14dp"
+                android:text="Answer these security questions to reset PIN."/>
+            <!-- Question 1: Who's your mother? -->
+            <TextView
+                android:id="@+id/textViewMother"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:textColor="#000000"
+                android:text="What is your Mother's Name?"
+                android:fontFamily="@font/readexpro"
+                android:layout_gravity="center"
+                android:textSize="16sp"/>
+
+            <!-- EditText for Mother's answer -->
+            <EditText
+                android:id="@+id/editTextMother"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:padding="20dp"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:layout_marginHorizontal="30dp"
+                android:background="@drawable/forgot_pin_container"
+                android:layout_height="wrap_content"
+                android:hint="Enter Name"/>
+
+            <!-- Question 2: Who is your father? -->
+            <TextView
+                android:id="@+id/textViewFather"
+                android:layout_gravity="center"
+                android:fontFamily="@font/readexpro"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What is your Father's Name?"
+                android:textSize="16sp"
+                android:layout_marginTop="35dp"/>
+
+            <!-- EditText for Father's answer -->
+            <EditText
+                android:id="@+id/editTextFather"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:background="@drawable/forgot_pin_container"
+                android:layout_width="match_parent"
+                android:padding="20dp"
+                android:layout_height="wrap_content"
+                android:hint="Enter Name"/>
+
+            <!-- Button to save backup -->
+            <TextView
+                android:id="@+id/buttonSaveBackup"
+                android:background="@drawable/button_background"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="17dp"
+                android:layout_margin="36dp"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="20dp"
+                android:fontFamily="@font/readexmedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

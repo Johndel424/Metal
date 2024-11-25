@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Borrower.Chat_Feature.MessageImagesActivityFullScreen">
+    <RelativeLayout
+        android:id="@+id/floatingLayout"
+        android:layout_width="match_parent"
+        android:background="#30D9D9D9"
+        android:layout_height="80dp"
+
+        android:elevation="100dp"
+        android:layout_alignParentTop="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/relative"
+            android:background="@color/white"
+            android:layout_height="70dp">
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/back"
+                android:scaleType="centerCrop"
+                android:padding="10dp"
+                android:layout_marginHorizontal="5dp"
+                android:background="?attr/selectableItemBackground"
+                android:layout_marginStart="5dp"
+                android:layout_centerVertical="true"
+                android:id="@+id/back"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/fullscreen_image_view"
+        android:layout_width="match_parent"
+        android:elevation="-10dp"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"/>
+</RelativeLayout>

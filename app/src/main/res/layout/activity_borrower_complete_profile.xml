@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient2"
+    tools:context=".Borrower.UploadDocuments_Feature.Borrower_CompleteProfile">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="288dp"
+            android:layout_height="wrap_content"
+            android:textSize="24dp"
+            android:layout_marginTop="50dp"
+            android:padding="10dp"
+            android:background="@drawable/button_background"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/robot"
+            android:text="USER INFORMATION" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/readexpro"
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:text="Kindly complete the fields with your information."
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/upload"
+            android:background="@drawable/circle"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:padding="40dp"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="Selected Image"
+            android:scaleType="centerCrop" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="10dp"
+            android:paddingHorizontal="20dp"
+            android:background="@drawable/button_background1"
+            android:paddingVertical="8dp"
+            android:gravity="center_vertical">
+
+            <!-- Icon -->
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/icondaw"
+                android:layout_marginEnd="8dp"/>
+
+            <!-- Text -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Personal Information"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:fontFamily="@font/readexpro"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_height="2dp"
+            android:layout_marginVertical="10dp"
+            android:background="#000000" />
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="5dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="Full Name" />
+        <EditText
+            android:id="@+id/editName"
+            android:background="@drawable/rectanglebg"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:layout_marginHorizontal="30dp"
+            android:textSize="15dp"
+            android:textColor="#000000"
+            android:layout_height="wrap_content"
+            android:hint="Enter Name" />
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:textColor="#000000"
+            android:paddingVertical="5dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="wrap_content"
+            android:text="Age" />
+        <EditText
+            android:id="@+id/editAge"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectanglebg"
+            android:textColor="#000000"
+            android:layout_width="match_parent"
+            android:textSize="15dp"
+            android:fontFamily="@font/readexpro"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Enter Age"
+            android:inputType="number" />
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="5dp"
+            android:layout_marginHorizontal="30dp"
+            android:textColor="#000000"
+            android:layout_height="wrap_content"
+            android:text="Province" />
+        <Spinner
+            android:id="@+id/editTextProvince"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectanglebg"
+            android:inputType="text" />
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:textColor="#000000"
+            android:paddingVertical="5dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="wrap_content"
+            android:text="City / Municipality" />
+        <Spinner
+            android:id="@+id/editTextCity"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:textColor="#000000"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/rectanglebg"
+            android:inputType="text" />
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:textColor="#000000"
+            android:paddingVertical="5dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="wrap_content"
+            android:text="Barangay" />
+        <EditText
+            android:id="@+id/editBrgy"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectanglebg"
+            android:layout_width="match_parent"
+            android:textSize="15dp"
+            android:fontFamily="@font/readexpro"
+            android:layout_marginHorizontal="30dp"
+            android:textColor="#000000"
+            android:hint="Enter Barangay" />
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:textColor="#000000"
+            android:paddingVertical="5dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="wrap_content"
+            android:text="Street / Landmark" />
+        <EditText
+            android:id="@+id/editStreet"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:background="@drawable/rectanglebg"
+            android:layout_width="match_parent"
+            android:textColor="#000000"
+            android:fontFamily="@font/readexpro"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Street Landmark" />
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:textColor="#000000"
+            android:paddingVertical="5dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="wrap_content"
+            android:text="Marital Status" />
+        <Spinner
+            android:id="@+id/spinnerMaritalStatus"
+            android:background="@drawable/rectanglebg"
+            android:textColor="#000000"
+            android:fontFamily="@font/readexpro"
+            android:layout_marginHorizontal="30dp"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/button_background1"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="15dp"
+            android:gravity="center_vertical">
+
+            <!-- Icon -->
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/icon"
+                android:layout_marginEnd="8dp"/>
+
+            <!-- Text -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Income Information"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:fontFamily="@font/readexpro"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_height="2dp"
+            android:textColor="#000000"
+            android:layout_marginVertical="10dp"
+            android:background="#000000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="5dp"
+            android:layout_marginHorizontal="30dp"
+            android:textColor="#000000"
+            android:layout_height="wrap_content"
+            android:text="Line of Work" />
+        <Spinner
+            android:id="@+id/spinnerLineOfWork"
+            android:background="@drawable/rectanglebg"
+            android:fontFamily="@font/readexpro"
+            android:textSize="15dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_width="match_parent"
+            android:textColor="#000000"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:textColor="#000000"
+            android:paddingVertical="5dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="wrap_content"
+            android:text="Occupation" />
+        <EditText
+            android:id="@+id/editWork"
+            android:background="@drawable/rectanglebg"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:textSize="15dp"
+            android:textColor="#000000"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="wrap_content"
+            android:hint="Occupation" />
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="5dp"
+            android:layout_marginHorizontal="30dp"
+            android:textColor="#000000"
+            android:layout_height="wrap_content"
+            android:text="Monthly Income" />
+        <EditText
+            android:id="@+id/editMonthlyIncome"
+            android:background="@drawable/rectanglebg"
+            android:layout_width="match_parent"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:fontFamily="@font/readexpro"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter Amount"
+            android:inputType="numberDecimal" />
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="5dp"
+            android:textColor="#000000"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="wrap_content"
+            android:text="Meralco Bill" />
+        <EditText
+            android:id="@+id/editMeralcoBill"
+            android:background="@drawable/rectanglebg"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter Amount"
+            android:inputType="numberDecimal" />
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="5dp"
+            android:textColor="#000000"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="wrap_content"
+            android:text="Water Bill" />
+        <EditText
+            android:id="@+id/editWaterBill"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectanglebg"
+            android:layout_width="match_parent"
+            android:textSize="15dp"
+            android:fontFamily="@font/readexpro"
+            android:textColor="#000000"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Enter Amount"
+            android:inputType="numberDecimal" />
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:textColor="#000000"
+            android:paddingVertical="5dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="wrap_content"
+            android:text="Internet Bill (0 IF NONE)" />
+        <EditText
+            android:id="@+id/editInternetBill"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:background="@drawable/rectanglebg"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:textSize="15dp"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Enter Amount"
+            android:inputType="numberDecimal" />
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="5dp"
+            android:layout_marginHorizontal="30dp"
+            android:textColor="#000000"
+            android:layout_height="wrap_content"
+            android:text="House Rent Amount (0 IF NONE)" />
+        <EditText
+            android:id="@+id/editHouseBill"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectanglebg"
+            android:layout_width="match_parent"
+            android:textSize="15dp"
+            android:textColor="#000000"
+            android:fontFamily="@font/readexpro"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Enter Amountt"
+            android:inputType="numberDecimal" />
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="5dp"
+            android:textColor="#000000"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="wrap_content"
+            android:text="International Money Transfer (0 IF NONE)" />
+        <EditText
+            android:id="@+id/editPadala"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectanglebg"
+            android:textColor="#000000"
+            android:layout_width="match_parent"
+            android:textSize="15dp"
+            android:fontFamily="@font/readexpro"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Enter Amount"
+            android:inputType="numberDecimal" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/submitButton"
+            android:background="@drawable/button_background"
+            android:layout_marginVertical="30dp"
+            android:paddingHorizontal="15dp"
+            android:fontFamily="@font/readexpro"
+            android:textColor="@color/white"
+            android:layout_gravity="end"
+            android:textSize="18dp"
+            android:layout_marginHorizontal="30dp"
+            android:text="Next"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>

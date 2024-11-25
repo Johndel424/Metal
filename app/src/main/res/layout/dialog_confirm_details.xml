@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/container"
+            android:layout_height="40dp"
+            android:fontFamily="@font/robot"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:textSize="26sp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirm Details "
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/robot"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                tools:ignore="RtlCompat" />
+        </LinearLayout>
+        <TextView
+            android:text="Please check and validate the details before continuing."
+            android:textSize="13dp"
+            android:paddingVertical="10dp"
+            android:fontFamily="@font/readexpro"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:textAlignment="center" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_green"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Name"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_whiite"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Confirm"
+                    android:textSize="13dp"
+                    android:id="@+id/name"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_green"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Age"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_whiite"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Confirm"
+                    android:textSize="13dp"
+                    android:id="@+id/age"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_green"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Address"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_whiite"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Confirm"
+                    android:textSize="13dp"
+                    android:id="@+id/address"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_green"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Line of Work"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_whiite"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Confirm"
+                    android:textSize="13dp"
+                    android:id="@+id/workk"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_green"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Marital Status"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_whiite"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Confirm"
+                    android:textSize="13dp"
+                    android:id="@+id/maritalStatus"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_green"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Work"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_whiite"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Confirm"
+                    android:textSize="13dp"
+                    android:id="@+id/work"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_green"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Monthly Income"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_whiite"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Confirm"
+                    android:textSize="13dp"
+                    android:id="@+id/monthly"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_green"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Meralco Bill"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_whiite"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Confirm"
+                    android:textSize="13dp"
+                    android:id="@+id/meralco"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_green"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Water Bill"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_whiite"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Confirm"
+                    android:textSize="13dp"
+                    android:id="@+id/water"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_green"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Internet Bill"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_whiite"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Confirm"
+                    android:textSize="13dp"
+                    android:id="@+id/internet"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_green"
+                android:gravity="center">
+
+                <TextView
+                    android:text="House Rent"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_whiite"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Confirm"
+                    android:textSize="13dp"
+                    android:id="@+id/house"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_green"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Many Transfer"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_whiite"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Confirm"
+                    android:textSize="13dp"
+                    android:id="@+id/padala"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_green"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Total Bills"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_whiite"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Confirm"
+                    android:textSize="13dp"
+                    android:id="@+id/total"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_green"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Total Income"
+                    android:textSize="13dp"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:padding="10dp"
+                android:background="@drawable/box_with_stroke_whiite"
+                android:gravity="center">
+
+                <TextView
+                    android:text="Confirm"
+                    android:textSize="13dp"
+                    android:id="@+id/total2"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <!-- Add Buttons at the bottom -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/status"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:id="@+id/center"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="20dp"
+                android:layout_alignParentStart="true"
+                android:padding="5dp"
+                android:id="@+id/btnConfirm"
+                android:textAlignment="center"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/readexmedium"
+                android:onClick="onAcceptClicked"
+                android:text="Confirm"
+                android:layout_toStartOf="@id/center"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="20dp"
+                android:layout_alignParentEnd="true"
+                android:padding="5dp"
+                android:id="@+id/btnCancel"
+                android:textAlignment="center"
+                android:background="@drawable/button_background_cancel"
+                android:fontFamily="@font/readexmedium"
+                android:text="Cancel"
+                android:onClick="onRejectClicked"
+                android:layout_toEndOf="@id/center"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

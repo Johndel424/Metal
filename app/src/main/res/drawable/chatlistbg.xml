@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Set the background color of the shape (optional) -->
+    <solid android:color="#ffffff" /> <!-- Background can be transparent or a specific color -->
+
+    <!-- Set the corner radius -->
+    <corners android:radius="16dp" /> <!-- Adjust the radius to your needs -->
+
+    <!-- Set the border (stroke) color and width -->
+    <stroke
+        android:width="2dp"
+        android:color="#6BE251" /> <!-- #4CAF50 is green; you can change this to any color -->
+
+</shape>

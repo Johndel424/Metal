@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Collector.HomeCollector">
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_above="@id/menu"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_above="@id/menu"
+        android:id="@+id/homeLayout"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:background="@drawable/daily_collect_bg"
+            android:layout_height="200dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_margin="20dp"
+            android:text="DAILY COLLECTION LIST"
+            android:textSize="22dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff"
+            android:fontFamily="@font/robot"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/balanceLayout"
+            android:elevation="20dp"
+            android:padding="5dp"
+            android:layout_marginHorizontal="20dp"
+            android:orientation="vertical"
+            android:background="@drawable/loanbalancebg"
+            android:layout_marginTop="60dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:textStyle="bold"
+                android:text="Collection Today"
+                android:textColor="@color/black"
+                android:padding="15dp"
+                android:background="@drawable/bgloanbalance"
+                android:textSize="20dp"
+                android:fontFamily="@font/readexmedium"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:id="@+id/previousBalance"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:textSize="30dp"
+                android:fontFamily="@font/readexpro"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_marginTop="230dp"
+            android:padding="5dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/chatlistbg"
+            android:layout_height="match_parent"
+            android:id="@+id/recyclerView"
+            android:scrollbars="vertical"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:background="@color/white"
+        android:id="@+id/menu"
+        android:layout_alignParentBottom="true"
+        android:layout_height="85dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_marginBottom="-3dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:gravity="bottom"
+            android:background="@drawable/bottom_nav_bg"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="40dp"
+                    android:id="@+id/homeIndicator"
+                    android:visibility="visible"
+                    android:layout_height="2dp"
+                    android:background="@color/green2"/>
+                <ImageButton
+                    android:id="@+id/home"
+                    android:layout_width="50dp"
+                    android:padding="8dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/menu_home_selected"
+                    android:scaleType="fitXY"
+                    android:background="?attr/selectableItemBackground"
+                    android:tooltipText="Order"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Home"
+                    android:fontFamily="@font/readexpro"
+                    android:textSize="14sp"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="40dp"
+                    android:id="@+id/profileIndicator"
+                    android:visibility="invisible"
+                    android:layout_height="2dp"
+                    android:background="@color/green2"/>
+                <ImageButton
+                    android:id="@+id/profile"
+                    android:layout_width="50dp"
+                    android:padding="8dp"
+                    android:src="@drawable/menu_profile_unselected"
+                    android:layout_height="50dp"
+                    android:scaleType="fitXY"
+                    android:background="?attr/selectableItemBackground"
+                    android:tooltipText="Order"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    android:fontFamily="@font/readexpro"
+                    android:textSize="14sp"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

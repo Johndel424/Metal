@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo1000"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo1000"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Metal"
+        tools:targetApi="31">
+        <activity
+            android:name=".Collector.CollectorDailyCollectionDetail"
+            android:exported="false" />
+        <activity
+            android:name=".Collector.CollectorDailyCollectionDetail2"
+            android:exported="false" />
+        <activity
+            android:name=".Secretary.Secretary_Chat.SecretaryChat"
+            android:exported="false" />
+        <activity
+            android:name=".Secretary.Secretary_PassDue.Secretary_PassDue"
+            android:exported="false" />
+        <activity
+            android:name=".Secretary.Secretary_LoanHistory.SecretaryLoanHistory"
+            android:exported="false" />
+        <activity
+            android:name=".Secretary.Secretary_Approval.Secretary_LoanApproval.SecretaryLoanVerificationDetail"
+            android:exported="false" />
+        <activity
+            android:name=".Secretary.Secretary_Approval.Secretary_LoanApproval.SecretaryLoanApprovalPending"
+            android:exported="false" />
+        <activity
+            android:name=".Secretary.Secretary_Approval.Secretary_AccountApproval.SecretaryAccountVerificationDetail"
+            android:exported="false" />
+        <activity
+            android:name=".Secretary.Secretary_Approval.Secretary_AccountApproval.SecretaryApproval"
+            android:exported="false" />
+        <activity
+            android:name=".Borrower.Chat_Feature.MessageImagesActivityAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".Borrower.Chat_Feature.MessageImagesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Borrower.Chat_Feature.MessageImagesActivityFullScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Borrower.Profile_Feature.ChangePin"
+            android:exported="false" />
+        <activity
+            android:name=".Borrower.Profile_Feature.CheckPin"
+            android:exported="false" />
+        <activity
+            android:name=".Borrower.Chat_Feature.MessageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Borrower.LoanHistory_Feature.LoanHistoryDetail"
+            android:exported="false" />
+        <activity
+            android:name=".Borrower.LoanHistory_Feature.LoanHistory"
+            android:exported="false" />
+        <activity
+            android:name=".Borrower.Borrower_Credit"
+            android:exported="false" />
+        <activity
+            android:name=".FullScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Borrower.UploadDocuments_Feature.Borrower_UploadDocuments"
+            android:exported="false" />
+        <activity
+            android:name=".Borrower.UploadDocuments_Feature.Borrower_CompleteProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Borrower.Home_Feature.HomeBorrowerDetail"
+            android:exported="false" />
+        <activity
+            android:name=".Borrower.Home_Feature.HomeBorrower"
+            android:exported="false" />
+        <activity
+            android:name=".Borrower.Borrower_ForgotPin"
+            android:exported="false" />
+        <activity
+            android:name=".Borrower.Borrower_PinRegistration"
+            android:exported="false" />
+        <activity
+            android:name=".Policy"
+            android:exported="false" />
+        <activity
+            android:name=".Borrower.Home"
+            android:exported="false" />
+        <activity
+            android:name=".Collector.HomeCollector"
+            android:exported="false" />
+        <activity
+            android:name=".Secretary.Secretary_Home.HomeSecretary"
+            android:exported="false" />
+        <activity
+            android:name=".SignIn"
+            android:exported="false" />
+        <activity
+            android:name=".SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA4sU84zmEGtQfKCnFaLqU7KhlD80uD_h8" />
+    </application>
+
+</manifest>

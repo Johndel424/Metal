@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomCircularProgressBar">
+        <attr name="paidColor" format="color" />
+        <attr name="unpaidColor" format="color" />
+        <attr name="usersWithLoansColor" format="color" /> <!-- New attribute -->
+        <attr name="usersWithoutLoansColor" format="color" /> <!-- New attribute -->
+        <attr name="strokeColor" format="color" /> <!-- New stroke color attribute -->
+        <attr name="strokeWidth" format="dimension" /> <!-- New stroke width attribute -->
+        <attr name="textSize" format="dimension" />
+    </declare-styleable>
+</resources>

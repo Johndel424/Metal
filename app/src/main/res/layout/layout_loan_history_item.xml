@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="10dp"
+        android:elevation="10dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/rounded_bg_grey"
+        android:id="@+id/item"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/loan_history"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="3dp"
+            android:gravity="center_vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/loanId"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_height="wrap_content"
+                    android:text="1728403200000"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <!-- Amount in Red -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#00974D"
+                    android:id="@+id/status"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/readexpro"
+                    android:background="@drawable/rounded_bg_with_stroke_green"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="5dp"
+                    android:text="Status"/>
+
+                <!-- Arrow Icon -->
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="10dp"
+                    android:src="@drawable/nextsec"
+                    android:layout_gravity="center_vertical" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="3dp"
+            android:gravity="center_vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/readexpro"
+                        android:layout_height="wrap_content"
+                        android:text="Start Date:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/startDate"
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/readexpro"
+                        android:layout_alignParentEnd="true"
+                        android:layout_height="wrap_content"
+                        android:text="30 Sept 2024 - 11:00 AM"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/readexpro"
+                        android:layout_height="wrap_content"
+                        android:text="End Date:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/endDate"
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/readexpro"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="End Date:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/readexpro"
+                        android:layout_height="wrap_content"
+                        android:text="Loan Amount:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/totalLoan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/readexpro"
+                        android:layout_alignParentEnd="true"
+                        android:text="Loan Amount:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/readexpro"
+                        android:layout_height="wrap_content"
+                        android:text="Daily Installment:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/dailyPayment"
+                        android:layout_width="wrap_content"
+                        android:fontFamily="@font/readexpro"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="Daily Installment:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Borrower.Home_Feature.HomeBorrowerDetail">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:id="@+id/secondPageLayout"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/relativeSecond"
+            android:background="@drawable/proof_payment_bg"
+            android:layout_height="60dp">
+            <ImageButton
+                android:id="@+id/backSecond"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginStart="5dp"
+                android:background="?attr/selectableItemBackground"
+                android:padding="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/back_button_white" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/robot"
+                android:layout_centerInParent="true"
+                android:text="Proof of Payment"
+                android:textColor="#ffffff"
+                android:textSize="25dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@id/relativeSecond"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/paymentProof"
+                android:layout_width="200dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="200dp"
+                android:layout_margin="10dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/rounded_border_green5"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:padding="20dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="Confirm Payment"
+                        android:textSize="25dp"
+                        android:fontFamily="@font/readexsemibold"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/readexpro"
+                        android:text="Review details of this transaction and contact"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/readexpro"
+                        android:text="customer service if something is wrong to proceed"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:background="#00C25D"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_height="3dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:padding="20dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="2dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="Amount Received:"
+                            android:textSize="13dp"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/readexpro"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/amountShouldBeCollect"
+                            android:layout_width="150dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/proofpaymentborder"
+                            android:fontFamily="@font/readexpro"
+                            android:paddingStart="5dp"
+                            android:text="200"
+                            android:textColor="@color/black"
+                            android:textSize="17dp" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="2dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="Amount to be Collect:"
+                            android:textSize="13dp"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/readexpro"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/amountToBeCollected"
+                            android:layout_width="150dp"
+                            android:background="@drawable/proofpaymentborder"
+                            android:textSize="17dp"
+                            android:text="200"
+                            android:fontFamily="@font/readexpro"
+                            android:textColor="@color/black"
+                            android:layout_centerVertical="true"
+                            android:paddingStart="5dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_height="wrap_content"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="2dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="Due Date:"
+                            android:textSize="13dp"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/readexpro"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/formattedDateTextView"
+                            android:layout_width="150dp"
+                            android:textSize="17dp"
+                            android:text="07 09 2003"
+                            android:fontFamily="@font/readexpro"
+                            android:textColor="@color/black"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/proofpaymentborder"
+                            android:paddingStart="5dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_height="wrap_content"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginVertical="2dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="Status:"
+                            android:textSize="13dp"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/readexpro"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/statusPaymentTextView"
+                            android:layout_width="150dp"
+                            android:textSize="17dp"
+                            android:text="Paid"
+                            android:fontFamily="@font/readexpro"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/proofpaymentborder"
+                            android:textColor="@color/black"
+                            android:paddingStart="5dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_height="wrap_content"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

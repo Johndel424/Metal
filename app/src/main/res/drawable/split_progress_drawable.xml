@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background of the progress bar (unpaid portion) -->
+    <item android:id="@android:id/background">
+        <shape>
+            <corners android:radius="5dp"/>
+            <solid android:color="#CCCCCC"/> <!-- Gray for unpaid -->
+        </shape>
+    </item>
+
+    <!-- Progress part (paid portion) -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <corners android:radius="5dp"/>
+                <solid android:color="#4CAF50"/> <!-- Green for paid -->
+            </shape>
+        </clip>
+    </item>
+
+</layer-list>
