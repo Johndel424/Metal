@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.metal.Collector.Profile_Feature.CollectorMePage;
 import com.example.metal.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -118,43 +119,102 @@ public class HomeCollector extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("repaymentDetails");
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        progressDialog.show();
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        progressDialog.show();
+//
+//        eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                currentLoanList.clear();
+//
+//                if (snapshot.exists()) { // Check if snapshot exists to avoid null issues
+//                    for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
+//                        CollectorDailyCollectionModel dataClass = itemSnapshot.getValue(CollectorDailyCollectionModel.class);
+//                        // Check if dataClass is not null before adding it to the list
+//                        if (dataClass != null) {
+//                            currentLoanList.add(dataClass);
+//                        }
+//                    }
+//                    adapter.notifyDataSetChanged(); // Notify adapter after data is added
+//                } else {
+//                    // Handle the case when snapshot doesn't exist or is empty
+//                    Toast.makeText(HomeCollector.this, "No data available.", Toast.LENGTH_SHORT).show();
+//                }
+//
+//                progressDialog.dismiss();
+//                dialog.dismiss();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                progressDialog.dismiss();
+//                dialog.dismiss();
+//                Toast.makeText(HomeCollector.this, "Failed to load data.", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//    }
+@Override
+protected void onStart() {
+    super.onStart();
+    progressDialog.show();
 
-        eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                currentLoanList.clear();
+    // Get logged-in user's name from the 'users' table
+    String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+    DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("users").child(currentUserId);
 
-                if (snapshot.exists()) { // Check if snapshot exists to avoid null issues
-                    for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
-                        CollectorDailyCollectionModel dataClass = itemSnapshot.getValue(CollectorDailyCollectionModel.class);
-                        // Check if dataClass is not null before adding it to the list
-                        if (dataClass != null) {
-                            currentLoanList.add(dataClass);
+    userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot userSnapshot) {
+            if (userSnapshot.exists()) {
+                String loggedInUserName = userSnapshot.child("Name").getValue(String.class);
+
+                // Fetch loans where the collector's name matches the logged-in user's name
+                eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        currentLoanList.clear();
+
+                        if (snapshot.exists()) {
+                            for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
+                                CollectorDailyCollectionModel dataClass = itemSnapshot.getValue(CollectorDailyCollectionModel.class);
+
+                                if (dataClass != null && loggedInUserName != null && loggedInUserName.equals(dataClass.getCollector())) {
+                                    currentLoanList.add(dataClass);
+                                }
+                            }
+
+                            adapter.notifyDataSetChanged(); // Notify adapter
+                        } else {
+                            Toast.makeText(HomeCollector.this, "No data available.", Toast.LENGTH_SHORT).show();
                         }
+
+                        progressDialog.dismiss();
+                        dialog.dismiss();
                     }
-                    adapter.notifyDataSetChanged(); // Notify adapter after data is added
-                } else {
-                    // Handle the case when snapshot doesn't exist or is empty
-                    Toast.makeText(HomeCollector.this, "No data available.", Toast.LENGTH_SHORT).show();
-                }
 
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        progressDialog.dismiss();
+                        dialog.dismiss();
+                        Toast.makeText(HomeCollector.this, "Failed to load data.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            } else {
                 progressDialog.dismiss();
-                dialog.dismiss();
+                Toast.makeText(HomeCollector.this, "User data not found.", Toast.LENGTH_SHORT).show();
             }
+        }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                progressDialog.dismiss();
-                dialog.dismiss();
-                Toast.makeText(HomeCollector.this, "Failed to load data.", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }
+        @Override
+        public void onCancelled(@NonNull DatabaseError error) {
+            progressDialog.dismiss();
+            Toast.makeText(HomeCollector.this, "Failed to fetch user data.", Toast.LENGTH_SHORT).show();
+        }
+    });
+}
 
     @Override
     protected void onStop() {

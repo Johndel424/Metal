@@ -9,6 +9,7 @@ public class CollectorDailyCollectionModel {
     private String userProfile;
     private String userAddress;
     private String PhoneNumber;
+    private String collector;
     Double userLatitude;
     Double userLongitude;
     private double toCollect_1, toCollect_2, toCollect_3, toCollect_4, toCollect_5, toCollect_6, toCollect_7, toCollect_8, toCollect_9, toCollect_10,
@@ -47,6 +48,14 @@ public class CollectorDailyCollectionModel {
 
     public CollectorDailyCollectionModel() {
         // Constructor
+    }
+
+    public String getCollector() {
+        return collector;
+    }
+
+    public void setCollector(String collector) {
+        this.collector = collector;
     }
 
     public double getRepaymentBalance() {
