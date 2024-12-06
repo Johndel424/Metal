@@ -33,6 +33,21 @@
         android:theme="@style/Theme.Metal"
         tools:targetApi="31">
         <activity
+            android:name=".Borrower.UploadDocuments_Feature.FaceScanner"
+            android:exported="false" />
+        <activity
+            android:name=".Borrower.UploadDocuments_Feature.Borrower_UploadDocuments2"
+            android:exported="false" />
+        <activity
+            android:name=".Secretary.Secretary_LoanHistory.SecretaryLoanHistory2"
+            android:exported="false" />
+        <activity
+            android:name=".Secretary.Secretary_LoanHistory.SecretaryBorrowerDetail"
+            android:exported="false" />
+        <activity
+            android:name=".Secretary.Secretary_LoanHistory.LoanHistoryDetail2"
+            android:exported="false" />
+        <activity
             android:name=".Collector.CollectorDailyCollectionDetail"
             android:exported="false" />
         <activity

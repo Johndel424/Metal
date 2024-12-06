@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Borrower.UploadDocuments_Feature.FaceScanner">
+
+
+    <RelativeLayout
+        android:id="@+id/initialLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border2"
+        android:layout_centerInParent="true"
+        android:padding="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="#E8EAF6"
+            android:layout_centerInParent="true"
+            android:elevation="4dp"
+            app:cardCornerRadius="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/box"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+                <TextView
+                    android:id="@+id/baba"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/readexpro"
+                    android:text="Please take a selfie picture."
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/okButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Proceed"
+                    android:fontFamily="@font/readexpro"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/button_background"
+                    android:layout_below="@id/baba" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</RelativeLayout>

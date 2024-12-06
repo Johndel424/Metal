@@ -35,6 +35,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
@@ -406,45 +407,118 @@ public class Borrower_CompleteProfile extends AppCompatActivity {
         }
     }
 
-    private void uploadImageToFirebase(final ImageUploadCallback callback) {
-        if (imageUri != null) {
-            // Firebase Storage reference
-            StorageReference storageReference = FirebaseStorage.getInstance().getReference();
-            StorageReference fileReference = storageReference.child("Profile Images/" + System.currentTimeMillis() + ".jpg");
+//    private void uploadImageToFirebase(final ImageUploadCallback callback) {
+//        if (imageUri != null) {
+//            // Firebase Storage reference
+//            StorageReference storageReference = FirebaseStorage.getInstance().getReference();
+//            StorageReference fileReference = storageReference.child("Profile Images/" + System.currentTimeMillis() + ".jpg");
+//
+//            fileReference.putFile(imageUri)
+//                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                        @Override
+//                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//                            // Get the download URL
+//                            fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+//                                @Override
+//                                public void onSuccess(Uri uri) {
+//                                    String imageUrl = uri.toString();
+//                                    callback.onUploadSuccess(imageUrl);
+//                                }
+//                            }).addOnFailureListener(new OnFailureListener() {
+//                                @Override
+//                                public void onFailure(@NonNull Exception e) {
+//                                    Toast.makeText(Borrower_CompleteProfile.this, "Failed to get download URL: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+//                                    callback.onUploadFailure(e);
+//                                }
+//                            });
+//                        }
+//                    })
+//                    .addOnFailureListener(new OnFailureListener() {
+//                        @Override
+//                        public void onFailure(@NonNull Exception e) {
+//                            Toast.makeText(Borrower_CompleteProfile.this, "Upload failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+//                            callback.onUploadFailure(e);
+//                        }
+//                    });
+//        } else {
+//            callback.onUploadFailure(new Exception("Image URI is null"));
+//        }
+//        //end of 1st page
+//
+//    }
+private void uploadImageToFirebase(final ImageUploadCallback callback) {
+    if (imageUri != null) {
+        // Firebase Storage reference
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference();
+        StorageReference fileReference = storageReference.child("Profile Images/" + System.currentTimeMillis() + ".jpg");
 
-            fileReference.putFile(imageUri)
-                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            // Get the download URL
-                            fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                @Override
-                                public void onSuccess(Uri uri) {
-                                    String imageUrl = uri.toString();
-                                    callback.onUploadSuccess(imageUrl);
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(Borrower_CompleteProfile.this, "Failed to get download URL: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                                    callback.onUploadFailure(e);
-                                }
-                            });
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(Borrower_CompleteProfile.this, "Upload failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                            callback.onUploadFailure(e);
-                        }
-                    });
-        } else {
-            callback.onUploadFailure(new Exception("Image URI is null"));
-        }
-        //end of 1st page
+        fileReference.putFile(imageUri)
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        // Get the download URL
+                        fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                String imageUrl = uri.toString();
+                                callback.onUploadSuccess(imageUrl);
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(Borrower_CompleteProfile.this, "Failed to get download URL: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                callback.onUploadFailure(e);
+                            }
+                        });
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Borrower_CompleteProfile.this, "Upload failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        callback.onUploadFailure(e);
+                    }
+                });
+    } else {
+        // If imageUri is null, use a default image from drawable
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.menu_approval_selected); // Replace with your drawable resource
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] data = baos.toByteArray();
 
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference();
+        StorageReference fileReference = storageReference.child("Profile Images/" + System.currentTimeMillis() + ".jpg");
+
+        fileReference.putBytes(data)
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        // Get the download URL
+                        fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                String imageUrl = uri.toString();
+                                callback.onUploadSuccess(imageUrl);
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(Borrower_CompleteProfile.this, "Failed to get download URL: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                callback.onUploadFailure(e);
+                            }
+                        });
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Borrower_CompleteProfile.this, "Upload failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        callback.onUploadFailure(e);
+                    }
+                });
     }
+}
+
     private void saveDetails() {
         if (userUid == null) {
             // Handle the case where userUid is still null
@@ -490,10 +564,16 @@ public class Borrower_CompleteProfile extends AppCompatActivity {
         double totalIncomeMonthly = monthlyIncomeDbl + monthlyPadalaDbl;
 
         // Check if any field is empty
-        if (name.isEmpty() || age.isEmpty() || brgy.isEmpty() || street.isEmpty() || work.isEmpty() || monthlyIncome.isEmpty() || meralcoBill.isEmpty() || waterBill.isEmpty() || internetBill.isEmpty() || houseBill.isEmpty() || padala.isEmpty() || selectedProvince.isEmpty() || selectedCity.isEmpty() || selectedLineOfWork.isEmpty() || selectedMaritalStatus.isEmpty()) {
-            Toast.makeText(getApplicationContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
-        } else {
-
+//        if (name.isEmpty() || age.isEmpty() || brgy.isEmpty() || street.isEmpty() || work.isEmpty() || monthlyIncome.isEmpty() || meralcoBill.isEmpty() || waterBill.isEmpty() || internetBill.isEmpty() || houseBill.isEmpty() || padala.isEmpty() || selectedProvince.isEmpty() || selectedCity.isEmpty() || selectedLineOfWork.isEmpty() || selectedMaritalStatus.isEmpty()) {
+//            Toast.makeText(getApplicationContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
+//        }
+            if (name.isEmpty() || age.isEmpty() || brgy.isEmpty() || street.isEmpty() || work.isEmpty() || monthlyIncome.isEmpty() ||
+                    meralcoBill.isEmpty() || waterBill.isEmpty() || internetBill.isEmpty() || houseBill.isEmpty() || padala.isEmpty() ||
+                    selectedProvince.isEmpty() || selectedCity.isEmpty() || selectedLineOfWork.isEmpty() || selectedMaritalStatus.isEmpty() ||
+                    (Double.parseDouble(monthlyIncome) < 20000)) {
+                Toast.makeText(getApplicationContext(), "Please fill in all fields and ensure monthly income is 20k or higher", Toast.LENGTH_SHORT).show();
+            }
+           else {
             // Inflate the custom layout
             LayoutInflater inflater = LayoutInflater.from(this);
             View customView = inflater.inflate(R.layout.dialog_confirm_details, null);
@@ -555,8 +635,6 @@ public class Borrower_CompleteProfile extends AppCompatActivity {
                     progressDialog.setCancelable(false);
                     progressDialog.show();
 
-                    // Handle data saving and uploading to Firebase
-                    if (imageUri != null) {
                         uploadImageToFirebase(new ImageUploadCallback() {
                             @Override
                             public void onUploadSuccess(String imageUrl) {
@@ -567,7 +645,7 @@ public class Borrower_CompleteProfile extends AppCompatActivity {
                                 database.child("users").child(userUid).child("City").setValue(selectedCity);
                                 database.child("users").child(userUid).child("lineOfWork").setValue(selectedLineOfWork);
                                 database.child("users").child(userUid).child("MaritalStatus").setValue(selectedMaritalStatus);
-                                database.child("users").child(userUid).child("ProfileImage").setValue(imageUrl);
+                                database.child("users").child(userUid).child("ProfileOldImage").setValue(imageUrl);
                                 database.child("users").child(userUid).child("Name").setValue(name);
                                 database.child("users").child(userUid).child("Age").setValue(age);
                                 database.child("users").child(userUid).child("Brgy").setValue(brgy);
@@ -607,10 +685,6 @@ public class Borrower_CompleteProfile extends AppCompatActivity {
                                 Toast.makeText(Borrower_CompleteProfile.this, "Failed to upload image: " + exception.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
-                    } else {
-                        progressDialog.dismiss();
-                        Toast.makeText(getApplicationContext(), "Please select an image to upload", Toast.LENGTH_SHORT).show();
-                    }
                 }
             });
 

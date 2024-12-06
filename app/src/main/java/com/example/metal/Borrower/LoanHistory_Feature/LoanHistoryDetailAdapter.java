@@ -441,9 +441,9 @@ public class LoanHistoryDetailAdapter extends RecyclerView.Adapter<LoanHistoryDe
                 Intent intent = new Intent(context, HomeBorrowerDetail.class);
                 // Pass the values to the next activity
                 intent.putExtra("formattedDate", formattedDate);
-                intent.putExtra("formattedPayment", formattedPayment);
+                intent.putExtra("formattedPayment", formattedNeedPayment);
                 intent.putExtra("proofPayment", proofPayment); // Use the passed proofPayment
-                intent.putExtra("needToPay", formattedNeedPayment);
+                intent.putExtra("needToPay", formattedPayment);
                 intent.putExtra("nname", nname);  // Pass the borrower's name
                 // Start the new activity
                 context.startActivity(intent);

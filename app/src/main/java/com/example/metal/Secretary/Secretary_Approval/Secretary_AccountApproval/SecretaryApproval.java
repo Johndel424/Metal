@@ -163,6 +163,56 @@ public class SecretaryApproval extends AppCompatActivity {
         databaseReference = getInstance().getReference("users");
 
 // Set up the ValueEventListener for databaseReference
+//        eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                userList.clear();
+//
+//                // Fetch and filter the data
+//                for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
+//                    UserModel dataClass = itemSnapshot.getValue(UserModel.class);
+//                    if (dataClass != null
+//                            && "yes".equals(dataClass.getAccountDocumentsComplete())
+//                            && "pending".equals(dataClass.getAccountStatus())) {
+//                        userList.add(dataClass);
+//                    }
+//                }
+//
+//                // Sort the userList by timestamp in descending order (latest first)
+//                Collections.sort(userList, new Comparator<UserModel>() {
+//                    @Override
+//                    public int compare(UserModel u1, UserModel u2) {
+//                        // Sort in descending order by timestamp
+//                        return Long.compare(u2.getTimestamp(), u1.getTimestamp());
+//                    }
+//                });
+//
+//                // Update the adapter
+//                adapter.notifyDataSetChanged();
+//
+//                // Check if the list is empty
+//                if (userList.isEmpty()) {
+//                    // Dismiss the AlertDialog if no items found
+//                    dialog.dismiss();
+//                    // Optionally, show a message to the user
+//                    Toast.makeText(SecretaryApproval.this, "No users found.", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    // Dismiss the AlertDialog if there are items
+//                    dialog.dismiss();
+//                }
+//
+//                // Always dismiss the ProgressDialog after loading data
+//                progressDialog.dismiss();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                // Dismiss both dialogs on error
+//                progressDialog.dismiss();
+//                dialog.dismiss();
+//                Toast.makeText(SecretaryApproval.this, "Failed to load data.", Toast.LENGTH_SHORT).show();
+//            }
+//        });
         eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -173,7 +223,8 @@ public class SecretaryApproval extends AppCompatActivity {
                     UserModel dataClass = itemSnapshot.getValue(UserModel.class);
                     if (dataClass != null
                             && "yes".equals(dataClass.getAccountDocumentsComplete())
-                            && "pending".equals(dataClass.getAccountStatus())) {
+                            && "pending".equals(dataClass.getAccountStatus())
+                            && "borrower".equals(dataClass.getUserType())) { // Additional condition
                         userList.add(dataClass);
                     }
                 }

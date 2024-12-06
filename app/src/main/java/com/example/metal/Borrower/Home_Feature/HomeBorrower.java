@@ -33,8 +33,11 @@ import com.example.metal.Borrower.Profile_Feature.Borrower_Profile;
 import com.example.metal.Borrower.UploadDocuments_Feature.Borrower_CompleteProfile;
 import com.example.metal.Borrower.UploadDocuments_Feature.Borrower_UploadDocuments;
 import com.example.metal.Borrower.Chat_Feature.MessageActivity;
+import com.example.metal.Borrower.UploadDocuments_Feature.FaceScanner;
 import com.example.metal.Collector.CollectorDailyCollectionModel;
 import com.example.metal.R;
+import com.example.metal.Secretary.Secretary_LoanHistory.SecretaryLoanHistory;
+import com.example.metal.Secretary.Secretary_LoanHistory.SecretaryLoanHistory2;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -105,7 +108,7 @@ public class HomeBorrower extends AppCompatActivity {
         loanHistoryLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeBorrower.this, LoanHistory.class);
+                Intent intent = new Intent(HomeBorrower.this, SecretaryLoanHistory2.class);
                 startActivity(intent);
             }
         });
@@ -274,7 +277,7 @@ public class HomeBorrower extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String userUid = FirebaseAuth.getInstance().getCurrentUser().getUid(); // Assuming you get the userUid from FirebaseAuth
-                Intent intent = new Intent(HomeBorrower.this, Borrower_CompleteProfile.class);
+                Intent intent = new Intent(HomeBorrower.this, FaceScanner.class);
                 intent.putExtra("userUid", userUid); // Add the userUid as an extra
                 startActivity(intent);
             }
@@ -285,7 +288,7 @@ public class HomeBorrower extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String userUid = FirebaseAuth.getInstance().getCurrentUser().getUid(); // Assuming you get the userUid from FirebaseAuth
-                Intent intent = new Intent(HomeBorrower.this, Borrower_CompleteProfile.class);
+                Intent intent = new Intent(HomeBorrower.this, FaceScanner.class);
                 intent.putExtra("userUid", userUid); // Add the userUid as an extra
                 startActivity(intent);
             }

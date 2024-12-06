@@ -51,7 +51,7 @@ public class HomeBorrowerDetail extends AppCompatActivity {
         amountShouldBeCollect.setText(needToPay);
         amountCollected.setText(formattedPayment);
         formattedDateTextView.setText(formattedDate);
-        //statusPaymentTextView.setText(nname);
+        statusPaymentTextView.setText("Paid");
 
         Picasso.get().load(proofPayment).into(paymentProof);
 

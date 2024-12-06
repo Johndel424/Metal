@@ -466,9 +466,9 @@ public class HomeRecentAdapter extends RecyclerView.Adapter<HomeRecentViewHolder
                     Intent intent = new Intent(context, HomeBorrowerDetail.class);
                     // Put the values you want to pass to the next activity
                     intent.putExtra("formattedDate", formattedDate);
-                    intent.putExtra("formattedPayment", formattedPayment);
+                    intent.putExtra("needToPay", formattedPayment);
                     intent.putExtra("proofPayment", proofPayment); // Use the passed proofPayment
-                    intent.putExtra("needToPay", formattedNeedPayment);
+                    intent.putExtra("formattedPayment", formattedNeedPayment);
                     // Start the new activity
                     context.startActivity(intent);
                 }

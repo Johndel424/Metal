@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,4 +7,651 @@
     android:layout_height="match_parent"
     tools:context=".Borrower.Borrower_PinRegistration">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/pin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border2"
+        android:visibility="visible"
+        tools:context=".PinInputActivity">
+
+        <LinearLayout
+            android:id="@+id/step"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Title TextView -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/readexpro"
+                android:text="Setting You Up.."
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Step indicator TextView -->
+            <TextView
+                android:id="@+id/step_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/readexpro"
+                android:text="3 of 4"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- Progress Container -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <!-- Active Step (Green) -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="8dp"
+                    android:layout_weight="1"
+                    android:background="#d3d3d3" /> <!-- Green Color -->
+
+                <!-- Inactive Step -->
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="#ffffff" /> <!-- Gray Color -->
+
+                <!-- Inactive Step -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="8dp"
+                    android:layout_weight="1"
+                    android:background="#D3D3D3" /> <!-- Gray Color -->
+
+                <!-- Inactive Step -->
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="#ffffff" /> <!-- Gray Color -->
+
+                <!-- Inactive Step -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="8dp"
+                    android:layout_weight="1"
+                    android:background="#00CC3D" /> <!-- Gray Color -->
+
+                <!-- Inactive Step -->
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="#ffffff" /> <!-- Gray Color -->
+
+                <!-- Inactive Step -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="8dp"
+                    android:layout_weight="1"
+                    android:background="#D3D3D3" /> <!-- Gray Color -->
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/pinId"
+            android:layout_width="287dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/step"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="@font/robot"
+            android:padding="10dp"
+            android:text="YOUR PIN CODE"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pinId"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/readexpro"
+            android:text="To set up PIN create a 4-digit code."
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+        <!-- PIN display -->
+        <LinearLayout
+            android:id="@+id/pin_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/digit"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pin_digit_1"
+                android:layout_width="58dp"
+                android:layout_height="76dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_with_radius_shadow"
+                android:gravity="center"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/pin_digit_2"
+                android:layout_width="58dp"
+                android:layout_height="76dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_with_radius_shadow"
+                android:gravity="center"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/pin_digit_3"
+                android:layout_width="58dp"
+                android:layout_height="76dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_with_radius_shadow"
+                android:gravity="center"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/pin_digit_4"
+                android:layout_width="58dp"
+                android:layout_height="76dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_with_radius_shadow"
+                android:gravity="center"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/pin_display"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/black" />
+        <!-- Keypad -->
+        <GridLayout
+            android:id="@+id/keypad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pin_display"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"
+            android:layout_marginTop="16dp"
+            android:columnCount="3"
+            android:rowCount="4">
+
+            <!-- Buttons 1-9 -->
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_margin="4dp">
+
+                <Button
+                    android:id="@+id/button_1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:backgroundTint="#00E06C"
+                    android:text="1"
+                    android:textSize="24sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_margin="4dp">
+
+                <Button
+                    android:id="@+id/button_2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:backgroundTint="#00E06C"
+                    android:text="2"
+                    android:textSize="24sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_margin="4dp">
+
+                <Button
+                    android:id="@+id/button_3"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:backgroundTint="#00E06C"
+                    android:text="3"
+                    android:textSize="24sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_margin="4dp">
+
+                <Button
+                    android:id="@+id/button_4"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:backgroundTint="#00E06C"
+                    android:text="4"
+                    android:textSize="24sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_margin="4dp"
+                android:backgroundTint="#00E06C">
+
+                <Button
+                    android:id="@+id/button_5"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:backgroundTint="#00E06C"
+                    android:text="5"
+                    android:textSize="24sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_margin="4dp"
+                android:backgroundTint="#00E06C">
+
+                <Button
+                    android:id="@+id/button_6"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:backgroundTint="#00E06C"
+                    android:text="6"
+                    android:textSize="24sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_margin="4dp">
+
+                <Button
+                    android:id="@+id/button_7"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:backgroundTint="#00E06C"
+                    android:text="7"
+                    android:textSize="24sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_margin="4dp">
+
+                <Button
+                    android:id="@+id/button_8"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:backgroundTint="#00E06C"
+                    android:text="8"
+                    android:textSize="24sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_margin="4dp">
+
+                <Button
+                    android:id="@+id/button_9"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:backgroundTint="#00E06C"
+                    android:text="9"
+                    android:textSize="24sp" />
+            </FrameLayout>
+
+            <!-- Empty view for spacing -->
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_margin="4dp">
+
+                <View
+                    android:layout_width="80dp"
+                    android:layout_height="80dp" />
+            </FrameLayout>
+
+            <!-- Button 0 -->
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_margin="4dp">
+
+                <Button
+                    android:id="@+id/button_0"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:backgroundTint="#00E06C"
+                    android:text="0"
+                    android:textSize="24sp" />
+            </FrameLayout>
+
+            <!-- Delete Button -->
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowSpan="1"
+                android:layout_columnSpan="1"
+                android:layout_margin="4dp">
+
+                <Button
+                    android:id="@+id/button_delete"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:backgroundTint="#00E06C"
+                    android:text="Del"
+                    android:textSize="15sp" />
+            </FrameLayout>
+        </GridLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/border2"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/backUp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Title TextView -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Almost Finished.."
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:fontFamily="@font/readexpro" />
+
+            <!-- Step indicator TextView -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 of 4"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:fontFamily="@font/readexpro"
+                android:layout_marginTop="4dp" />
+
+            <!-- Progress Container -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center">
+
+                <!-- Active Step (Green) -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="8dp"
+                    android:background="#d3d3d3" /> <!-- Green Color -->
+
+                <!-- Inactive Step -->
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="#ffffff" /> <!-- Gray Color -->
+
+                <!-- Inactive Step -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="8dp"
+                    android:background="#D3D3D3" /> <!-- Gray Color -->
+
+                <!-- Inactive Step -->
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="#ffffff" /> <!-- Gray Color -->
+
+                <!-- Inactive Step -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="8dp"
+                    android:background="#d3d3d3" /> <!-- Gray Color -->
+
+                <!-- Inactive Step -->
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="#ffffff" /> <!-- Gray Color -->
+
+                <!-- Inactive Step -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="8dp"
+                    android:background="#00CC3D" /> <!-- Gray Color -->
+
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="308dp"
+            android:layout_height="wrap_content"
+            android:textSize="24dp"
+            android:padding="10dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_background"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/robot"
+            android:layout_above="@id/enterMobile"
+            android:layout_marginBottom="20dp"
+            android:text="ACCOUNT RECOVERY" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/readexpro"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Select and answer these security questions to help"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="verify your identity if needed for account recovery."/>
+        <!-- Question 1: Who's your mother? -->
+        <TextView
+            android:id="@+id/textViewMother"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"
+            android:text="What is your Mother's Name?"
+            android:fontFamily="@font/readexpro"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:textSize="16sp"/>
+
+        <!-- EditText for Mother's answer -->
+        <EditText
+            android:id="@+id/editTextMother"
+            android:layout_width="match_parent"
+            android:padding="20dp"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/bg_with_radius_shadow"
+            android:layout_height="wrap_content"
+            android:hint="Enter name"/>
+
+        <!-- Question 2: Who is your father? -->
+        <TextView
+            android:id="@+id/textViewFather"
+            android:layout_gravity="center"
+            android:fontFamily="@font/readexpro"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What is your Father's Name?"
+            android:textSize="16sp"
+            android:layout_marginTop="50dp"/>
+
+        <!-- EditText for Father's answer -->
+        <EditText
+            android:id="@+id/editTextFather"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/bg_with_radius_shadow"
+            android:layout_width="match_parent"
+            android:padding="20dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter name"/>
+
+        <!-- Button to save backup -->
+        <TextView
+            android:id="@+id/buttonSaveBackup"
+            android:background="@drawable/button_background"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:paddingVertical="10dp"
+            android:textSize="15dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/readexpro"
+            android:paddingHorizontal="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/pinRemember"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border2"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:padding="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="#E8EAF6"
+            android:layout_centerInParent="true"
+            android:elevation="4dp"
+            app:cardCornerRadius="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/box"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+                <TextView
+                    android:id="@+id/start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/readexpro"
+                    android:text="You're Pin is: "
+                    android:textSize="26sp"/>
+                <TextView
+                    android:id="@+id/pinTextView"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="@font/readexpro"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/start"
+                    android:text="5689"
+                    android:textStyle="bold"
+                    android:textSize="46sp"
+                    android:textColor="#ff4545" />
+                <TextView
+                    android:id="@+id/baba"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pinTextView"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/readexpro"
+                    android:text="Kindly confirm your PIN to continue."
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/pin_ok_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Proceed"
+                    android:fontFamily="@font/readexpro"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/button_background"
+                    android:layout_below="@id/baba"
+                    android:layout_marginTop="30dp" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</RelativeLayout>

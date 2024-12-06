@@ -67,7 +67,7 @@ public class SecretaryLoanHistoryAdapter extends RecyclerView.Adapter<SecretaryL
             e.printStackTrace(); // Handle the exception appropriately
         }
 
-// Format the dates to the desired output format
+        // Format the dates to the desired output format
         String formattedStartDate = (startDate != null) ? startDate.format(outputFormatter) : "N/A"; // Fallback if null
         String formattedEndDate = (endDate != null) ? endDate.format(outputFormatter) : "N/A"; // Fallback if null
 
@@ -94,7 +94,7 @@ public class SecretaryLoanHistoryAdapter extends RecyclerView.Adapter<SecretaryL
         holder.item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, LoanHistoryDetail.class);
+                Intent intent = new Intent(context, LoanHistoryDetail2.class);
                 intent.putExtra("loanId", LoanHistoryModel.getLoanId());
                 // Start the new activity
                 context.startActivity(intent);

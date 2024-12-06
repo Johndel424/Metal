@@ -1,10 +1,335 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Policy">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/bghis"
+            android:orientation="vertical"
+            android:layout_marginEnd="70dp"
+            android:layout_marginTop="30dp"
+            android:layout_height="70dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Privacy Policy"
+                android:padding="10dp"
+                android:textSize="30dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"
+                android:fontFamily="@font/readexsemibold"
+                android:layout_height="wrap_content"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="     Metal 5, the mobile lending application, has established a privacy policy that outlines the measures we’ve implemented to safeguard your personal information and maintain user confidentiality. This policy details how we collect, use, and share your information, and we ensure that all permissions granted by users are used solely to enhance the functionality of the app and strengthen the relationship between the application and its users. "
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_centerVertical="true"
+            android:text="How We Collect Your Information"
+            android:padding="10dp"
+            android:textSize="20dp"
+            android:background="@drawable/button_background"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff"
+            android:fontFamily="@font/readexsemibold"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexbold"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="20dp"
+            android:textColor="#000000"
+            android:text="User Verification and Loan Application:"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="The application collects user information such as name, address, contact number, and other relevant details as part of the user verification and loan application process. Government-issued ID's and documents are gathered for further verification, as required by the business when processing a loan application. "
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexbold"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="20dp"
+            android:textColor="#000000"
+            android:text="User Permission:"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexbold"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="User's Location"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="Upon accessing our application, the app requests permission to access the user's location. Location access is essential for our collectors/debtors to navigate efficiently when collecting payments."
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexbold"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="Camera/ Gallery Access"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="The camera and gallery access enable document uploads and photo sharing as part of the loan process."
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexbold"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="Loan Details"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="The application also displays the borrower's loan amount, payment history, and account status as part of its core functionality, allowing users to easily track their financial details."
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_centerVertical="true"
+            android:text="How We Use Your Information"
+            android:padding="10dp"
+            android:textSize="20dp"
+            android:background="@drawable/button_background"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff"
+            android:fontFamily="@font/readexsemibold"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexbold"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="We use your Information for the following:"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexbold"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="Verify Identity"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="Both new and existing users of the app are required to follow necessary steps to verify their identity, ensuring the prevention of fraud and hacking."
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexbold"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="Process and Manage Loan Applications"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="The information provided by users is crucial to the app's overall purpose. This enables users to easily apply for and manage loans directly from their mobile phones."
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexbold"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="Improve the app's functionality and user experience"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="One of the system's primary goals is to offer users a quick and easy way to apply for a loan. The information provided is essential to maintaining this objective and continually improving the system to meet our users' needs."
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexbold"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="Legal Requirements"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="Since the business operates in lending, it involves both client-owner relationships and financial transactions. The application is designed to ensure compliance with the legal requirements and regulations set by the Department of Trade and Industry (DTI)."
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/readexsemibold"
+            android:text="Data Sharing"
+            android:padding="10dp"
+            android:textSize="20dp"
+            android:background="@drawable/button_background"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="20dp"
+            android:textColor="#000000"
+            android:text="We do not share your personal information with third parties except:"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="When required by law or legal process.."
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="With service providers who assist in our operations (e.g., payment processors)."
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="With your consent."
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/readexsemibold"
+            android:text="Your Rights"
+            android:padding="10dp"
+            android:textSize="20dp"
+            android:background="@drawable/button_background"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="20dp"
+            android:textColor="#000000"
+            android:text="You have the right to:"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="Access and update your personal information."
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="Request the deletion of your data, subject to legal and regulatory requirements."
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="Opt-out of non-essential data collection."
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/readexsemibold"
+            android:text="Changes to This Policy"
+            android:padding="10dp"
+            android:textSize="20dp"
+            android:background="@drawable/button_background"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="We may update this Privacy Policy periodically. Changes will be posted within the app, and continued use of the app after changes are made will indicate acceptance of the updated policy."
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/readexsemibold"
+            android:text="Contact Us"
+            android:padding="10dp"
+            android:textSize="20dp"
+            android:background="@drawable/button_background"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/readexpro"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="40dp"
+            android:textColor="#000000"
+            android:text="If you have any questions or concerns regarding this Privacy Policy, please contact us at our Facebook."
+            android:layout_height="wrap_content"/>
+
+
+
+    </LinearLayout>
+</ScrollView>

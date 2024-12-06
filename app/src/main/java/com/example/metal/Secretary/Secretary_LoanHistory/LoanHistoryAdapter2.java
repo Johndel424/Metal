@@ -1,4 +1,4 @@
-package com.example.metal.Secretary.Secretary_Home;
+package com.example.metal.Secretary.Secretary_LoanHistory;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,75 +20,34 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class SecretaryHomeRecentAdapter extends RecyclerView.Adapter<SecretaryRecentViewHolder> {
+public class LoanHistoryAdapter2 extends RecyclerView.Adapter<LoanHistoryDetailViewHolder2> {
     private Context context;
     private List<CollectorDailyCollectionModel> dataList;
-    public SecretaryHomeRecentAdapter(Context context, List<CollectorDailyCollectionModel> dataList) {
+    String id, userUid;
+    public LoanHistoryAdapter2(Context context, List<CollectorDailyCollectionModel> dataList) {
         this.context = context;
         this.dataList = dataList;
     }
 
     @NonNull
     @Override
-    public SecretaryRecentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public LoanHistoryDetailViewHolder2 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_secretary_paid_item, parent, false);
-        return new SecretaryRecentViewHolder(view);
+        return new LoanHistoryDetailViewHolder2(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SecretaryRecentViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull LoanHistoryDetailViewHolder2 holder, int position) {
         CollectorDailyCollectionModel currentLoanModel = dataList.get(position);
 
-//        if ("yes".equalsIgnoreCase(currentLoanModel.getPaidOrNot_1())) {
-//            holder.day1.setVisibility(View.VISIBLE);
-//            SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault());
-//            String formattedDate = dateFormat.format(currentLoanModel.getDay_1());
-//            String formattedPayment = String.format("%.2f", currentLoanModel.getAmountPaid_1());
-//            String formattedNeedPayment = String.format("%.2f", currentLoanModel.getToCollect_1());
-//            holder.date1.setText(formattedDate);
-//            holder.payment1.setText(formattedPayment);
-//            holder.day1.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent = new Intent(context, HomeBorrowerDetail.class);
-//                    // Put the values you want to pass to the next activity
-//                    intent.putExtra("formattedDate", formattedDate);
-//                    intent.putExtra("formattedPayment", formattedPayment);
-//                    intent.putExtra("proofPayment", currentLoanModel.getProofPayment_1());
-//                    intent.putExtra("needToPay", formattedNeedPayment);
-//                    // Start the new activity
-//                    context.startActivity(intent);
-//                }
-//            });
-//        }
-//        if ("yes".equalsIgnoreCase(currentLoanModel.getPaidOrNot_2())) {
-//            holder.day2.setVisibility(View.VISIBLE);
-//            SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault());
-//            String formattedDate = dateFormat.format(currentLoanModel.getDay_2());
-//            String formattedPayment = String.format("%.2f", currentLoanModel.getAmountPaid_2());
-//            String formattedNeedPayment = String.format("%.2f", currentLoanModel.getToCollect_2());
-//            holder.date2.setText(formattedDate);
-//            holder.payment2.setText(formattedPayment);
-//
-//            holder.day2.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent = new Intent(context, HomeBorrowerDetail.class);
-//                    // Put the values you want to pass to the next activity
-//                    intent.putExtra("formattedDate", formattedDate);
-//                    intent.putExtra("formattedPayment", formattedPayment);
-//                    intent.putExtra("proofPayment", currentLoanModel.getProofPayment_2());
-//                    intent.putExtra("needToPay", formattedNeedPayment);
-//                    // Start the new activity
-//                    context.startActivity(intent);
-//                }
-//            });
-//        }
+        id = currentLoanModel.getLoanId();
+        userUid = currentLoanModel.getRepaymentUserId();
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_1(),
                 new Date(currentLoanModel.getDay_1()),
                 currentLoanModel.getAmountPaid_1(),
                 currentLoanModel.getToCollect_1(),
                 currentLoanModel.getProofPayment_1(),
+                "amountPaid_1",
                 holder.day1, holder.date1, holder.payment1,holder.name1);
 
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_2(),
@@ -96,12 +55,14 @@ public class SecretaryHomeRecentAdapter extends RecyclerView.Adapter<SecretaryRe
                 currentLoanModel.getAmountPaid_2(),
                 currentLoanModel.getToCollect_2(),
                 currentLoanModel.getProofPayment_2(),
+                "amountPaid_59",
                 holder.day2, holder.date2, holder.payment2,holder.name2);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_3(),
                 new Date(currentLoanModel.getDay_3()),
                 currentLoanModel.getAmountPaid_3(),
                 currentLoanModel.getToCollect_3(),
                 currentLoanModel.getProofPayment_3(),
+                "amountPaid_59",
                 holder.day3, holder.date3, holder.payment3,holder.name3);
 
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_4(),
@@ -109,12 +70,14 @@ public class SecretaryHomeRecentAdapter extends RecyclerView.Adapter<SecretaryRe
                 currentLoanModel.getAmountPaid_4(),
                 currentLoanModel.getToCollect_4(),
                 currentLoanModel.getProofPayment_4(),
+                "amountPaid_59",
                 holder.day4, holder.date4, holder.payment4,holder.name4);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_5(),
                 new Date(currentLoanModel.getDay_5()),
                 currentLoanModel.getAmountPaid_5(),
                 currentLoanModel.getToCollect_5(),
                 currentLoanModel.getProofPayment_5(),
+                "amountPaid_59",
                 holder.day5, holder.date5, holder.payment5,holder.name5);
 
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_6(),
@@ -122,12 +85,14 @@ public class SecretaryHomeRecentAdapter extends RecyclerView.Adapter<SecretaryRe
                 currentLoanModel.getAmountPaid_6(),
                 currentLoanModel.getToCollect_6(),
                 currentLoanModel.getProofPayment_6(),
+                "amountPaid_59",
                 holder.day6, holder.date6, holder.payment6,holder.name6);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_7(),
                 new Date(currentLoanModel.getDay_7()),
                 currentLoanModel.getAmountPaid_7(),
                 currentLoanModel.getToCollect_7(),
                 currentLoanModel.getProofPayment_7(),
+                "amountPaid_59",
                 holder.day7, holder.date7, holder.payment7,holder.name7);
 
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_8(),
@@ -135,12 +100,14 @@ public class SecretaryHomeRecentAdapter extends RecyclerView.Adapter<SecretaryRe
                 currentLoanModel.getAmountPaid_8(),
                 currentLoanModel.getToCollect_8(),
                 currentLoanModel.getProofPayment_8(),
+                "amountPaid_59",
                 holder.day8, holder.date8, holder.payment8,holder.name8);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_9(),
                 new Date(currentLoanModel.getDay_9()),
                 currentLoanModel.getAmountPaid_9(),
                 currentLoanModel.getToCollect_9(),
                 currentLoanModel.getProofPayment_9(),
+                "amountPaid_59",
                 holder.day9, holder.date9, holder.payment9,holder.name9);
 
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_10(),
@@ -148,120 +115,140 @@ public class SecretaryHomeRecentAdapter extends RecyclerView.Adapter<SecretaryRe
                 currentLoanModel.getAmountPaid_10(),
                 currentLoanModel.getToCollect_10(),
                 currentLoanModel.getProofPayment_10(),
+                "amountPaid_59",
                 holder.day10, holder.date10, holder.payment10,holder.name10);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_11(),
                 new Date(currentLoanModel.getDay_11()),
                 currentLoanModel.getAmountPaid_11(),
                 currentLoanModel.getToCollect_11(),
                 currentLoanModel.getProofPayment_11(),
+                "amountPaid_59",
                 holder.day11, holder.date11, holder.payment11,holder.name11);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_12(),
                 new Date(currentLoanModel.getDay_12()),
                 currentLoanModel.getAmountPaid_12(),
                 currentLoanModel.getToCollect_12(),
                 currentLoanModel.getProofPayment_12(),
+                "amountPaid_59",
                 holder.day12, holder.date12, holder.payment12,holder.name12);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_13(),
                 new Date(currentLoanModel.getDay_13()),
                 currentLoanModel.getAmountPaid_13(),
                 currentLoanModel.getToCollect_13(),
                 currentLoanModel.getProofPayment_13(),
+                "amountPaid_59",
                 holder.day13, holder.date13, holder.payment13,holder.name13);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_14(),
                 new Date(currentLoanModel.getDay_14()),
                 currentLoanModel.getAmountPaid_14(),
                 currentLoanModel.getToCollect_14(),
                 currentLoanModel.getProofPayment_14(),
+                "amountPaid_59",
                 holder.day14, holder.date14, holder.payment14,holder.name14);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_15(),
                 new Date(currentLoanModel.getDay_15()),
                 currentLoanModel.getAmountPaid_15(),
                 currentLoanModel.getToCollect_15(),
                 currentLoanModel.getProofPayment_15(),
+                "amountPaid_59",
                 holder.day15, holder.date15, holder.payment15,holder.name15);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_16(),
                 new Date(currentLoanModel.getDay_16()),
                 currentLoanModel.getAmountPaid_16(),
                 currentLoanModel.getToCollect_16(),
                 currentLoanModel.getProofPayment_16(),
+                "amountPaid_59",
                 holder.day16, holder.date16, holder.payment16,holder.name16);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_17(),
                 new Date(currentLoanModel.getDay_17()),
                 currentLoanModel.getAmountPaid_17(),
                 currentLoanModel.getToCollect_17(),
                 currentLoanModel.getProofPayment_17(),
+                "amountPaid_59",
                 holder.day17, holder.date17, holder.payment17,holder.name17);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_18(),
                 new Date(currentLoanModel.getDay_18()),
                 currentLoanModel.getAmountPaid_18(),
                 currentLoanModel.getToCollect_18(),
                 currentLoanModel.getProofPayment_18(),
+                "amountPaid_59",
                 holder.day18, holder.date18, holder.payment18,holder.name18);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_19(),
                 new Date(currentLoanModel.getDay_19()),
                 currentLoanModel.getAmountPaid_19(),
                 currentLoanModel.getToCollect_19(),
                 currentLoanModel.getProofPayment_19(),
+                "amountPaid_59",
                 holder.day19, holder.date19, holder.payment19,holder.name19);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_20(),
                 new Date(currentLoanModel.getDay_20()),
                 currentLoanModel.getAmountPaid_20(),
                 currentLoanModel.getToCollect_20(),
                 currentLoanModel.getProofPayment_20(),
+                "amountPaid_59",
                 holder.day20, holder.date20, holder.payment20,holder.name20);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_21(),
                 new Date(currentLoanModel.getDay_21()),
                 currentLoanModel.getAmountPaid_21(),
                 currentLoanModel.getToCollect_21(),
                 currentLoanModel.getProofPayment_21(),
+                "amountPaid_59",
                 holder.day21, holder.date21, holder.payment21,holder.name21);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_22(),
                 new Date(currentLoanModel.getDay_22()),
                 currentLoanModel.getAmountPaid_22(),
                 currentLoanModel.getToCollect_22(),
                 currentLoanModel.getProofPayment_22(),
+                "amountPaid_59",
                 holder.day22, holder.date22, holder.payment22,holder.name22);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_23(),
                 new Date(currentLoanModel.getDay_23()),
                 currentLoanModel.getAmountPaid_23(),
                 currentLoanModel.getToCollect_23(),
                 currentLoanModel.getProofPayment_23(),
+                "amountPaid_59",
                 holder.day23, holder.date23, holder.payment23,holder.name23);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_24(),
                 new Date(currentLoanModel.getDay_24()),
                 currentLoanModel.getAmountPaid_24(),
                 currentLoanModel.getToCollect_24(),
                 currentLoanModel.getProofPayment_24(),
+                "amountPaid_59",
                 holder.day24, holder.date24, holder.payment24,holder.name24);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_25(),
                 new Date(currentLoanModel.getDay_25()),
                 currentLoanModel.getAmountPaid_25(),
                 currentLoanModel.getToCollect_25(),
                 currentLoanModel.getProofPayment_25(),
+                "amountPaid_59",
                 holder.day25, holder.date25, holder.payment25,holder.name25);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_26(),
                 new Date(currentLoanModel.getDay_26()),
                 currentLoanModel.getAmountPaid_26(),
                 currentLoanModel.getToCollect_26(),
                 currentLoanModel.getProofPayment_26(),
+                "amountPaid_59",
                 holder.day26, holder.date26, holder.payment26,holder.name26);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_27(),
                 new Date(currentLoanModel.getDay_27()),
                 currentLoanModel.getAmountPaid_27(),
                 currentLoanModel.getToCollect_27(),
                 currentLoanModel.getProofPayment_27(),
+                "amountPaid_59",
                 holder.day27, holder.date27, holder.payment27,holder.name27);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_28(),
                 new Date(currentLoanModel.getDay_28()),
                 currentLoanModel.getAmountPaid_28(),
                 currentLoanModel.getToCollect_28(),
                 currentLoanModel.getProofPayment_28(),
+                "amountPaid_59",
                 holder.day28, holder.date28, holder.payment28,holder.name28);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_29(),
                 new Date(currentLoanModel.getDay_29()),
                 currentLoanModel.getAmountPaid_29(),
                 currentLoanModel.getToCollect_29(),
                 currentLoanModel.getProofPayment_29(),
+                "amountPaid_59",
                 holder.day29, holder.date29, holder.payment29,holder.name29);
 
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_30(),
@@ -269,186 +256,217 @@ public class SecretaryHomeRecentAdapter extends RecyclerView.Adapter<SecretaryRe
                 currentLoanModel.getAmountPaid_30(),
                 currentLoanModel.getToCollect_30(),
                 currentLoanModel.getProofPayment_30(),
+                "amountPaid_59",
                 holder.day30, holder.date30, holder.payment30,holder.name30);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_31(),
                 new Date(currentLoanModel.getDay_31()),
                 currentLoanModel.getAmountPaid_31(),
                 currentLoanModel.getToCollect_31(),
                 currentLoanModel.getProofPayment_31(),
+                "amountPaid_59",
                 holder.day31, holder.date31, holder.payment31,holder.name31);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_32(),
                 new Date(currentLoanModel.getDay_32()),
                 currentLoanModel.getAmountPaid_32(),
                 currentLoanModel.getToCollect_32(),
                 currentLoanModel.getProofPayment_32(),
+                "amountPaid_59",
                 holder.day32, holder.date32, holder.payment32,holder.name32);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_33(),
                 new Date(currentLoanModel.getDay_33()),
                 currentLoanModel.getAmountPaid_33(),
                 currentLoanModel.getToCollect_33(),
                 currentLoanModel.getProofPayment_33(),
+                "amountPaid_59",
                 holder.day33, holder.date33, holder.payment33,holder.name33);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_34(),
                 new Date(currentLoanModel.getDay_34()),
                 currentLoanModel.getAmountPaid_34(),
                 currentLoanModel.getToCollect_34(),
                 currentLoanModel.getProofPayment_34(),
+                "amountPaid_59",
                 holder.day34, holder.date34, holder.payment34,holder.name34);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_35(),
                 new Date(currentLoanModel.getDay_35()),
                 currentLoanModel.getAmountPaid_35(),
                 currentLoanModel.getToCollect_35(),
                 currentLoanModel.getProofPayment_35(),
+                "amountPaid_59",
                 holder.day35, holder.date35, holder.payment35,holder.name35);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_36(),
                 new Date(currentLoanModel.getDay_36()),
                 currentLoanModel.getAmountPaid_36(),
                 currentLoanModel.getToCollect_36(),
                 currentLoanModel.getProofPayment_36(),
+                "amountPaid_59",
                 holder.day36, holder.date36, holder.payment36,holder.name36);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_37(),
                 new Date(currentLoanModel.getDay_37()),
                 currentLoanModel.getAmountPaid_37(),
                 currentLoanModel.getToCollect_37(),
                 currentLoanModel.getProofPayment_37(),
+                "amountPaid_59",
                 holder.day37, holder.date37, holder.payment37,holder.name37);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_38(),
                 new Date(currentLoanModel.getDay_38()),
                 currentLoanModel.getAmountPaid_38(),
                 currentLoanModel.getToCollect_38(),
                 currentLoanModel.getProofPayment_38(),
+                "amountPaid_59",
                 holder.day38, holder.date38, holder.payment38,holder.name38);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_39(),
                 new Date(currentLoanModel.getDay_39()),
                 currentLoanModel.getAmountPaid_39(),
                 currentLoanModel.getToCollect_39(),
                 currentLoanModel.getProofPayment_39(),
+                "amountPaid_59",
                 holder.day39, holder.date39, holder.payment39,holder.name39);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_4(),
                 new Date(currentLoanModel.getDay_4()),
                 currentLoanModel.getAmountPaid_4(),
                 currentLoanModel.getToCollect_4(),
                 currentLoanModel.getProofPayment_4(),
+                "amountPaid_59",
                 holder.day4, holder.date4, holder.payment4,holder.name4);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_41(),
                 new Date(currentLoanModel.getDay_41()),
                 currentLoanModel.getAmountPaid_41(),
                 currentLoanModel.getToCollect_41(),
                 currentLoanModel.getProofPayment_41(),
+                "amountPaid_59",
                 holder.day41, holder.date41, holder.payment41,holder.name41);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_42(),
                 new Date(currentLoanModel.getDay_42()),
                 currentLoanModel.getAmountPaid_42(),
                 currentLoanModel.getToCollect_42(),
                 currentLoanModel.getProofPayment_42(),
+                "amountPaid_59",
                 holder.day42, holder.date42, holder.payment42,holder.name42);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_43(),
                 new Date(currentLoanModel.getDay_43()),
                 currentLoanModel.getAmountPaid_43(),
                 currentLoanModel.getToCollect_43(),
                 currentLoanModel.getProofPayment_43(),
+                "amountPaid_59",
                 holder.day43, holder.date43, holder.payment43,holder.name43);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_44(),
                 new Date(currentLoanModel.getDay_44()),
                 currentLoanModel.getAmountPaid_44(),
                 currentLoanModel.getToCollect_44(),
                 currentLoanModel.getProofPayment_44(),
+                "amountPaid_59",
                 holder.day44, holder.date44, holder.payment44,holder.name44);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_45(),
                 new Date(currentLoanModel.getDay_45()),
                 currentLoanModel.getAmountPaid_45(),
                 currentLoanModel.getToCollect_45(),
                 currentLoanModel.getProofPayment_45(),
+                "amountPaid_59",
                 holder.day45, holder.date45, holder.payment45,holder.name45);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_46(),
                 new Date(currentLoanModel.getDay_46()),
                 currentLoanModel.getAmountPaid_46(),
                 currentLoanModel.getToCollect_46(),
                 currentLoanModel.getProofPayment_46(),
+                "amountPaid_59",
                 holder.day46, holder.date46, holder.payment46,holder.name46);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_47(),
                 new Date(currentLoanModel.getDay_47()),
                 currentLoanModel.getAmountPaid_47(),
                 currentLoanModel.getToCollect_47(),
                 currentLoanModel.getProofPayment_47(),
+                "amountPaid_59",
                 holder.day47, holder.date47, holder.payment47,holder.name47);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_48(),
                 new Date(currentLoanModel.getDay_48()),
                 currentLoanModel.getAmountPaid_48(),
                 currentLoanModel.getToCollect_48(),
                 currentLoanModel.getProofPayment_48(),
+                "amountPaid_59",
                 holder.day48, holder.date48, holder.payment48,holder.name48);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_49(),
                 new Date(currentLoanModel.getDay_49()),
                 currentLoanModel.getAmountPaid_49(),
                 currentLoanModel.getToCollect_49(),
                 currentLoanModel.getProofPayment_49(),
+                "amountPaid_59",
                 holder.day49, holder.date49, holder.payment49,holder.name49);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_50(),
                 new Date(currentLoanModel.getDay_50()),
                 currentLoanModel.getAmountPaid_50(),
                 currentLoanModel.getToCollect_50(),
                 currentLoanModel.getProofPayment_50(),
+                "amountPaid_59",
                 holder.day50, holder.date50, holder.payment50,holder.name50);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_52(),
                 new Date(currentLoanModel.getDay_52()),
                 currentLoanModel.getAmountPaid_52(),
                 currentLoanModel.getToCollect_52(),
                 currentLoanModel.getProofPayment_52(),
+                "amountPaid_59",
                 holder.day52, holder.date52, holder.payment52,holder.name52);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_53(),
                 new Date(currentLoanModel.getDay_53()),
                 currentLoanModel.getAmountPaid_53(),
                 currentLoanModel.getToCollect_53(),
                 currentLoanModel.getProofPayment_53(),
+                "amountPaid_59",
                 holder.day53, holder.date53, holder.payment53,holder.name53);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_51(),
                 new Date(currentLoanModel.getDay_51()),
                 currentLoanModel.getAmountPaid_51(),
                 currentLoanModel.getToCollect_51(),
                 currentLoanModel.getProofPayment_51(),
+                "amountPaid_59",
                 holder.day51, holder.date51, holder.payment51,holder.name51);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_54(),
                 new Date(currentLoanModel.getDay_54()),
                 currentLoanModel.getAmountPaid_54(),
                 currentLoanModel.getToCollect_54(),
                 currentLoanModel.getProofPayment_54(),
+                "amountPaid_59",
                 holder.day54, holder.date54, holder.payment54,holder.name54);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_55(),
                 new Date(currentLoanModel.getDay_55()),
                 currentLoanModel.getAmountPaid_55(),
                 currentLoanModel.getToCollect_55(),
                 currentLoanModel.getProofPayment_55(),
+                "amountPaid_59",
                 holder.day55, holder.date55, holder.payment55,holder.name55);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_56(),
                 new Date(currentLoanModel.getDay_56()),
                 currentLoanModel.getAmountPaid_56(),
                 currentLoanModel.getToCollect_56(),
                 currentLoanModel.getProofPayment_56(),
+                "amountPaid_59",
                 holder.day56, holder.date56, holder.payment56,holder.name56);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_57(),
                 new Date(currentLoanModel.getDay_57()),
                 currentLoanModel.getAmountPaid_57(),
                 currentLoanModel.getToCollect_57(),
                 currentLoanModel.getProofPayment_57(),
+                "amountPaid_59",
                 holder.day57, holder.date57, holder.payment57,holder.name57);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_58(),
                 new Date(currentLoanModel.getDay_58()),
                 currentLoanModel.getAmountPaid_58(),
                 currentLoanModel.getToCollect_58(),
                 currentLoanModel.getProofPayment_58(),
+                "amountPaid_59",
                 holder.day58, holder.date58, holder.payment58,holder.name58);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_59(),
                 new Date(currentLoanModel.getDay_59()),
                 currentLoanModel.getAmountPaid_59(),
                 currentLoanModel.getToCollect_59(),
                 currentLoanModel.getProofPayment_59(),
+                "amountPaid_59",
                 holder.day59, holder.date59, holder.payment59,holder.name59);
         setDayDetails(holder, currentLoanModel, currentLoanModel.getPaidOrNot_60(),
                 new Date(currentLoanModel.getDay_60()),
                 currentLoanModel.getAmountPaid_60(),
                 currentLoanModel.getToCollect_60(),
                 currentLoanModel.getProofPayment_60(),
+                "amountPaid_60",
                 holder.day60, holder.date60, holder.payment60,holder.name60);
     }
 
@@ -457,7 +475,7 @@ public class SecretaryHomeRecentAdapter extends RecyclerView.Adapter<SecretaryRe
         return dataList.size();
     }
 
-    private void setDayDetails(SecretaryRecentViewHolder holder, CollectorDailyCollectionModel currentLoanModel, String paidOrNot, Date day, double amountPaid, double toCollect, String proofPayment, View dayView, TextView dateView, TextView paymentView, TextView nameView) {
+    private void setDayDetails(LoanHistoryDetailViewHolder2 holder, CollectorDailyCollectionModel currentLoanModel, String paidOrNot, Date day, double amountPaid, double toCollect, String proofPayment,String amountPaidField, View dayView, TextView dateView, TextView paymentView, TextView nameView) {
         // Format the date from the `day` parameter
         SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault());
         String formattedDate = dateFormat.format(day);
@@ -471,38 +489,34 @@ public class SecretaryHomeRecentAdapter extends RecyclerView.Adapter<SecretaryRe
         String formattedNeedPayment = String.format("%.2f", toCollect);
 
         // Retrieve the `nname` from the `currentLoanModel`
-        String nname = currentLoanModel.getUserName();  // Assuming this method exists in the model
+        String nname = paidOrNot.equals("yes") ? "Paid" : paidOrNot;
+        // Assuming this method exists in the model
 
-        // Check if the payment status is "yes"
-        if ("yes".equalsIgnoreCase(paidOrNot)) {
-            // Check if the formatted date matches today's date
-            if (formattedDate.equals(formattedToday)) {
-                dayView.setVisibility(View.VISIBLE); // Show if the date is today
-                dateView.setText(formattedDate);
-                paymentView.setText(formattedPayment);
-                nameView.setText(nname);  // Set the borrower's name in the TextView
+        dayView.setVisibility(View.VISIBLE); // Show if the date is today
+        dateView.setText(formattedDate);
+        paymentView.setText(formattedPayment);
+        nameView.setText(nname);
 
-                // Set the click listener
-                dayView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(context, HomeBorrowerDetail.class);
-                        // Pass the values to the next activity
-                        intent.putExtra("formattedDate", formattedDate);
-                        intent.putExtra("formattedPayment", formattedNeedPayment);
-                        intent.putExtra("proofPayment", proofPayment); // Use the passed proofPayment
-                        intent.putExtra("needToPay", formattedPayment);
-                        intent.putExtra("nname", nname);  // Pass the borrower's name
-                        // Start the new activity
-                        context.startActivity(intent);
-                    }
-                });
-            } else {
-                dayView.setVisibility(View.GONE); // Hide if the date is not today
+        // Set the click listener
+        dayView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, SecretaryBorrowerDetail.class);
+                // Pass the values to the next activity
+                intent.putExtra("formattedDate", formattedDate);
+                intent.putExtra("needToPay", formattedPayment);
+                intent.putExtra("amountPaidbyBorrower", amountPaidField);
+                intent.putExtra("proofPayment", proofPayment); // Use the passed proofPayment
+                intent.putExtra("formattedPayment", formattedNeedPayment);
+                intent.putExtra("userUid", userUid);
+                intent.putExtra("loanId", id);
+                intent.putExtra("nname", nname);// Pass the borrower's name
+                // Start the new activity
+                context.startActivity(intent);
             }
-        } else {
-            dayView.setVisibility(View.GONE); // Hide if payment status is not "yes"
-        }
+        });
+
+
     }
 
 
@@ -511,7 +525,7 @@ public class SecretaryHomeRecentAdapter extends RecyclerView.Adapter<SecretaryRe
 
 
 }
-class SecretaryRecentViewHolder extends RecyclerView.ViewHolder{
+class LoanHistoryDetailViewHolder2 extends RecyclerView.ViewHolder{
     TextView payment1, date1 ,name1;
     TextView payment2, date2 ,name2;
     TextView payment3, date3 ,name3;
@@ -578,7 +592,7 @@ class SecretaryRecentViewHolder extends RecyclerView.ViewHolder{
     LinearLayout day31,day32,day33,day34,day35,day36,day37,day38,day39,day40;
     LinearLayout day41,day42,day43,day44,day45,day46,day47,day48,day49,day50;
     LinearLayout day51,day52,day53,day54,day55,day56,day57,day58,day59,day60;
-    public SecretaryRecentViewHolder(@NonNull View itemView) {
+    public LoanHistoryDetailViewHolder2(@NonNull View itemView) {
         super(itemView);
         date1 = itemView.findViewById(R.id.date1);
         day1 = itemView.findViewById(R.id.day1);
@@ -883,3 +897,4 @@ class SecretaryRecentViewHolder extends RecyclerView.ViewHolder{
         name60 = itemView.findViewById(R.id.name60);
     }
 }
+

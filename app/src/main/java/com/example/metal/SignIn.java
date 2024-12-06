@@ -87,8 +87,7 @@ public class SignIn extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SendOtp.setVisibility(View.GONE);
-                OtpVerify.setVisibility(View.VISIBLE);
+                finish();
             }
         });
         ImageView gif2 = findViewById(R.id.gif2);
