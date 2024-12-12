@@ -45,7 +45,6 @@ public class Borrower_CompleteProfile extends AppCompatActivity {
     private Uri imageUri;
     Spinner provinceSpinner, citySpinner, spinnerLineOfWork, spinnerMaritalStatus;
     private String userUid;
-    double totalBillMonthly, totalIncomeMonthly;
     EditText editName,editAge,editBrgy,editStreet,editWork,editMonthlyIncome,editMeralcoBill,editWaterBill,editInternetBill,editPadala,editHouseBill;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -407,45 +406,6 @@ public class Borrower_CompleteProfile extends AppCompatActivity {
         }
     }
 
-//    private void uploadImageToFirebase(final ImageUploadCallback callback) {
-//        if (imageUri != null) {
-//            // Firebase Storage reference
-//            StorageReference storageReference = FirebaseStorage.getInstance().getReference();
-//            StorageReference fileReference = storageReference.child("Profile Images/" + System.currentTimeMillis() + ".jpg");
-//
-//            fileReference.putFile(imageUri)
-//                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                        @Override
-//                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//                            // Get the download URL
-//                            fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-//                                @Override
-//                                public void onSuccess(Uri uri) {
-//                                    String imageUrl = uri.toString();
-//                                    callback.onUploadSuccess(imageUrl);
-//                                }
-//                            }).addOnFailureListener(new OnFailureListener() {
-//                                @Override
-//                                public void onFailure(@NonNull Exception e) {
-//                                    Toast.makeText(Borrower_CompleteProfile.this, "Failed to get download URL: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-//                                    callback.onUploadFailure(e);
-//                                }
-//                            });
-//                        }
-//                    })
-//                    .addOnFailureListener(new OnFailureListener() {
-//                        @Override
-//                        public void onFailure(@NonNull Exception e) {
-//                            Toast.makeText(Borrower_CompleteProfile.this, "Upload failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-//                            callback.onUploadFailure(e);
-//                        }
-//                    });
-//        } else {
-//            callback.onUploadFailure(new Exception("Image URI is null"));
-//        }
-//        //end of 1st page
-//
-//    }
 private void uploadImageToFirebase(final ImageUploadCallback callback) {
     if (imageUri != null) {
         // Firebase Storage reference
@@ -563,10 +523,6 @@ private void uploadImageToFirebase(final ImageUploadCallback callback) {
         double totalBillMonthly = meralcoBillDbl + waterBillDbl + internetBillDbl + houseBillDbl;
         double totalIncomeMonthly = monthlyIncomeDbl + monthlyPadalaDbl;
 
-        // Check if any field is empty
-//        if (name.isEmpty() || age.isEmpty() || brgy.isEmpty() || street.isEmpty() || work.isEmpty() || monthlyIncome.isEmpty() || meralcoBill.isEmpty() || waterBill.isEmpty() || internetBill.isEmpty() || houseBill.isEmpty() || padala.isEmpty() || selectedProvince.isEmpty() || selectedCity.isEmpty() || selectedLineOfWork.isEmpty() || selectedMaritalStatus.isEmpty()) {
-//            Toast.makeText(getApplicationContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
-//        }
             if (name.isEmpty() || age.isEmpty() || brgy.isEmpty() || street.isEmpty() || work.isEmpty() || monthlyIncome.isEmpty() ||
                     meralcoBill.isEmpty() || waterBill.isEmpty() || internetBill.isEmpty() || houseBill.isEmpty() || padala.isEmpty() ||
                     selectedProvince.isEmpty() || selectedCity.isEmpty() || selectedLineOfWork.isEmpty() || selectedMaritalStatus.isEmpty() ||
